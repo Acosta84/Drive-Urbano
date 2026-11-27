@@ -1,0 +1,6 @@
+{
+  "name": "MobiliCidade",
+  "description": "Plataforma inteligente de mobilidade urbana com monitoramento de frota em tempo real, painel operacional e aplicativo para passageiros.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

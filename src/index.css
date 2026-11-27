@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-beige: #F3EBDD;
+  --color-card: #FFFDF8;
+  --color-amber-brand: #E8C547;
+  --color-lime-brand: #A8D929;
+  --color-ink: #292D26;
+  --color-muted: #74766C;
+  --color-critical: #D9534F;
+  --color-attention: #E99A36;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #F3EBDD;
+    color: #292D26;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #292D26;
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet map integration & smooth marker transitions */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background-color: #EAE1CF;
+}
+
+.leaflet-marker-icon.transit-bus-marker {
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #FFFDF8;
+  color: #292D26;
+  border-radius: 14px;
+  border: 1px solid rgba(41, 45, 38, 0.14);
+  box-shadow: 0 8px 24px rgba(41, 45, 38, 0.12);
+}
+
+.leaflet-popup-tip {
+  background-color: #FFFDF8;
+}
+
+.leaflet-control-attribution {
+  background-color: rgba(255, 253, 248, 0.85) !important;
+  color: #74766C !important;
+  font-size: 10px !important;
+}
+
+/* Custom subtle scrollbars matching beige canvas */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EBDD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(41, 45, 38, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(41, 45, 38, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
